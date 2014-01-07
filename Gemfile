@@ -9,7 +9,8 @@ gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
-# Eco templating
+# Templating
+gem 'thin'
 gem 'eco'
 
 # JSON
