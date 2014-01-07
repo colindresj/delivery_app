@@ -10,7 +10,7 @@ gem 'pg'
 gem 'sass-rails', '~> 4.0.0'
 
 # Templating
-gem 'thin'
+gem 'slim'
 gem 'eco'
 
 # JSON
@@ -23,7 +23,7 @@ gem 'js-routes'
 
 # Foundation
 gem 'foundation-rails'
-gem 'compass-rails'
+gem 'bourbon'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

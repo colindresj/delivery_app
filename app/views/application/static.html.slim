@@ -1,0 +1,105 @@
+#wrap
+  #header-region
+    header
+      .contain-to-grid
+        nav.top-bar data-topbar=""
+          ul.title-area
+            li.name
+              h1
+                a href="#" Delivery
+            li.toggle-topbar.menu-icon
+              a href="#"
+          section.top-bar-section
+            / Right Nav Section
+            ul.right
+              li
+                a href="#" Dashboard
+              li.active
+                a href="#" Staff
+  #main-region
+    #staff-list
+      section#page-title
+        .row
+          .small-12.columns
+            h1 Staff
+            h4 Staff Member List
+            / #page-icons
+            /   i.accessibility.foundicon-person
+            /   i.accessibility.foundicon-person
+            /   i.accessibility.foundicon-person
+      section#breadcrumbs
+        .row
+          .small-12.columns
+            ul.breadcrumbs
+              li
+                a href="#" Home
+              li.unavailable
+                a href="#" Staff
+              li.current
+                a href="#" Greg
+      section
+        .row
+          .small-12.columns
+            .row
+              .small-12.medium-6.columns
+                button#new-staff.button.small Add Staff Member
+              .small-12.medium-6.columns
+                dl.sub-nav.right
+                  dt Sort:
+                  dd.active
+                    a href="#" Name
+                  dd
+                    a href="#" Title
+          .small-12.columns
+            form
+              .panel
+                #new-staff
+                  .row
+                    .small-12.medium-6.columns
+                      label for="staff-member-name" Name
+                      input id="staff-member-name" placeholder="Staff Member Name" type="text"
+                div
+                  ul.inline-list
+                    li
+                      button.button.tiny Save
+                    li
+                      button.button.tiny.secondary Cancel
+      section
+        .row
+          .small-12.columns.text-center
+            .panel
+              h3 No Staff Members Found!
+              h6.subheader Add a staff member to get started.
+      section
+        .row
+          .small-12.columns.medium-4.columns
+            .staff-member.text-center
+              a.th href="#"
+                img src="assets/avatar.png"
+          .small-12.columns.medium-4.columns
+            table width="100%"
+              thead
+                tr
+                  th Name
+                  th Age
+                  th Title
+              tbody
+                tr
+                  td Greg
+                  td 25
+                  td Delivery
+          .small-12.columns.medium-4.columns
+            ul.text-center.stats.small-block-grid-2
+              li.completed
+                p Completed
+                span.label.secondary.round 25
+              li.success
+                p Earnings
+                span.label.success.round $100.00
+
+  #push
+#footer-region
+  footer
+    .row
+      .small-12.columns.text-center
+        h6.subheader Footer Content
