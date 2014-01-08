@@ -83,4 +83,5 @@ group :development, :test do
   gem 'meta_request' # Supporting gem for Rails Panel
   gem 'rails-erd'
   gem 'awesome_print'
+  gem 'faker'
 end

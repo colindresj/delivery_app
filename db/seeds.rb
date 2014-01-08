@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Staff.delete_all
+
+Staff.create(:name => Faker::Name.name, :title => Faker::Name.title, :avatar_url => "#{Rails.root}/assets/avatar.png", :age => (20..100).to_a.sample )
+Staff.create(:name => Faker::Name.name, :title => Faker::Name.title, :avatar_url => "#{Rails.root}/assets/avatar.png", :age => (20..100).to_a.sample )
+Staff.create(:name => Faker::Name.name, :title => Faker::Name.title, :avatar_url => "#{Rails.root}/assets/avatar.png", :age => (20..100).to_a.sample )
+Staff.create(:name => Faker::Name.name, :title => Faker::Name.title, :avatar_url => "#{Rails.root}/assets/avatar.png", :age => (20..100).to_a.sample )
+Staff.create(:name => Faker::Name.name, :title => Faker::Name.title, :avatar_url => "#{Rails.root}/assets/avatar.png", :age => (20..100).to_a.sample )
