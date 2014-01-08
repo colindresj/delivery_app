@@ -5,7 +5,7 @@ App.module('Views', function(Views, App, Backbone, Marionette, $, _){
   _.extend(Marionette.View.prototype, {
     templateHelpers: function(){
       return {
-        currentUser: App.request('get:currentUser').toJSON(),
+        // currentUser: App.request('get:currentUser').toJSON(),
         linkTo: function(name, url, options){
           var options = options || {};
 

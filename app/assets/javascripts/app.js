@@ -11,7 +11,7 @@ window.App = (function(Backbone, Marionette){
 
   application.addInitializer(function(){
     application.module('HeaderModule').start();
-    application.module('FooterModule').start();
+    // application.module('FooterModule').start();
   });
 
   application.on('initialize:after', function(){

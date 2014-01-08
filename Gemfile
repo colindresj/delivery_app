@@ -11,7 +11,7 @@ gem 'sass-rails', '~> 4.0.0'
 
 # Templating
 gem 'slim'
-gem 'eco'
+gem 'skim'
 
 # JSON
 gem 'rabl'
