@@ -5,16 +5,6 @@
     <div id="new-staff-region" class="small-12 columns"></div>
   </div>
 </section>
-<!-- <section>
-  <div class="row">
-    <div class="small-12 columns text-center">
-      <div class="panel">
-        <h3>No Staff Members Found!</h3>
-        <h6>Add a staff member to get started.</h6>
-      </div>
-    </div>
-  </div>
-</section> -->
 <section>
   <div class="row">
     <div id="staff-index-region" class="small-12 columns"></div>

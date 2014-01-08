@@ -1,0 +1,37 @@
+<div class="small-12 medium-2 columns">
+  <div class="staff-member text-center">
+    <a href="#" class="th">
+      <img src="<%= @avatar_url %>" alt="Greg">
+    </a>
+  </div>
+</div>
+<div class="small-12 medium-6 columns">
+  <table width="100%">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Title</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @name %></td>
+        <td><%= @age %></td>
+        <td><%= @title %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="small-12 medium-4 columns">
+  <ul class="text-center stats small-block-grid-2">
+    <li class="completed">
+      <p>Completed</p>
+        <span class="label secondary round">25</span>
+    </li>
+    <li class="success">
+      <p>Earnings</p>
+      <span class="label success round">$100.00</span>
+    </li>
+  </ul>
+</div>

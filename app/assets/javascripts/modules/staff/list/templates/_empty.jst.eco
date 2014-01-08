@@ -1,0 +1,9 @@
+<div class="row">
+  <div id="empty" class="small-12 columns text-center">
+    <div class="panel">
+      <h3>No Staff Members Found!</h3>
+      <h6>Add a staff member to get started.</h6>
+    </div>
+  </div>
+</div>
+

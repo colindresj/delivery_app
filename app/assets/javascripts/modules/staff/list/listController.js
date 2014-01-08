@@ -2,6 +2,7 @@ App.module('StaffModule.List', function(List, App, Backbone, Marionette, $, _){
 
   List.Controller = {
     listStaff: function(){
+      var staffCollection = App.request('staff:allStaff');
       this.layoutView = this.getLayoutView();
 
       // instantiating all the subregions only when the layoutView is shown
@@ -9,7 +10,7 @@ App.module('StaffModule.List', function(List, App, Backbone, Marionette, $, _){
         this.titleRegion();
         this.actionsRegion();
         this.newStaffRegion();
-        this.staffIndexRegion();
+        this.staffIndexRegion(staffCollection);
       }, this);
 
       App.mainRegion.show(this.layoutView);
@@ -48,12 +49,14 @@ App.module('StaffModule.List', function(List, App, Backbone, Marionette, $, _){
     },
 
     // Index View
-    staffIndexRegion: function(){
-      var newIndexView = this.getStaffIndexView();
+    staffIndexRegion: function(collection){
+      var newIndexView = this.getStaffIndexView(collection);
       this.layoutView.staffIndexRegion.show(newIndexView);
     },
-    getStaffIndexView: function(){
-      return new List.StaffIndexView();
+    getStaffIndexView: function(collection){
+      return new List.StaffIndexView({
+        collection: collection
+      });
     }
   };
 

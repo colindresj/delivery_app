@@ -24,8 +24,21 @@ App.module('StaffModule.List', function(List, App, Backbone, Marionette, $, _){
     template: 'staff/list/_new-staff'
   });
 
-  List.StaffIndexView = App.Views.MainItemView.extend({
-    template: 'staff/list/_index'
+  List.StafferView = App.Views.MainItemView.extend({
+    className: 'row',
+    template: 'staff/list/_each'
+  });
+
+  List.Empty = App.Views.MainItemView.extend({
+    tagName: 'section',
+    template: 'staff/list/_empty'
+  });
+
+  List.StaffIndexView = App.Views.MainCompositeView.extend({
+    template: 'staff/list/_index',
+    itemView: List.StafferView,
+    itemViewContainer: '#staffers',
+    emptyView: List.Empty
   });
 
 });
