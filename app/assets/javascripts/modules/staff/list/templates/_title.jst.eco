@@ -1,0 +1,19 @@
+<div id="page-title">
+  <div class="row">
+    <div class="small-12 columns">
+      <h1>Staff</h1>
+      <h4>Staff Member List</h4>
+    </div>
+  </div>
+</div>
+<div id="breadcrumbs">
+  <div class="row">
+    <div class="small-12 columns">
+      <ul class="breadcrumbs">
+        <li><a href="#">Home</a></li>
+        <li class="unavailable"><a href="#">Staff</a></li>
+        <li><a href="#">Greg</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
