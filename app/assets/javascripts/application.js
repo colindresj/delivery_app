@@ -22,6 +22,6 @@
 //
 //= require js-routes
 //
-//= require_tree .
-
-$(function(){ $(document).foundation(); });
+//= require_tree ./config
+//
+//= require app
