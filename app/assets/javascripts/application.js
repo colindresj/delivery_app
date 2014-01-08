@@ -11,10 +11,8 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
-//= require foundation
-//
 //= require json2
+//= require foundation
 //= require underscore
 //= require backbone
 //= require backbone.marionette

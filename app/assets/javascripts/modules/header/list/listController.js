@@ -2,12 +2,10 @@ App.module('HeaderModule.List', function(List, App, Backbone, Marionette, $, _){
 
   List.Controller = {
     listHeader: function(){
-      // var links = App.request('header:links');
-      var headerView = this.getHeaderListView();
-
+      var headerView = this.getHeaderView();
       App.headerRegion.show(headerView);
     },
-    getHeaderListView: function(){
+    getHeaderView: function(){
       return new List.HeaderView();
     }
   };
