@@ -9,8 +9,8 @@
   </div>
   <div>
     <ul class="inline-list">
-      <li><button class="button tiny">Save</button></li>
-      <li><button class="button tiny secondary">Cancel</button></li>
+      <li><button id="create-new" class="button tiny">Save</button></li>
+      <li><button id="cancel-new" class="button tiny secondary">Cancel</button></li>
     </ul>
   </div>
 </div>

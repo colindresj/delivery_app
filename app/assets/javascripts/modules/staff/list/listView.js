@@ -16,7 +16,10 @@ App.module('StaffModule.List', function(List, App, Backbone, Marionette, $, _){
   });
 
   List.ActionsView = App.Views.MainItemView.extend({
-    template: 'staff/list/_actions'
+    template: 'staff/list/_actions',
+    triggers: {
+      'click #new-staff': 'loadNewForm'
+    }
   });
 
   List.StafferView = App.Views.MainItemView.extend({

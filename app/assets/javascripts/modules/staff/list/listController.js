@@ -9,7 +9,6 @@ App.module('StaffModule.List', function(List, App, Backbone, Marionette, $, _){
       this.layoutView.on('show', function(){
         this.titleRegion();
         this.actionsRegion();
-        this.newStaffRegion();
         this.staffIndexRegion(staffCollection);
       }, this);
 
@@ -33,6 +32,11 @@ App.module('StaffModule.List', function(List, App, Backbone, Marionette, $, _){
     // Actions View
     actionsRegion: function(){
       var actionsView = this.getActionsView();
+
+      actionsView.on('loadNewForm', function(){
+        this.newStaffRegion();
+      }, this);
+
       this.layoutView.actionsRegion.show(actionsView);
     },
     getActionsView: function(){
@@ -42,7 +46,13 @@ App.module('StaffModule.List', function(List, App, Backbone, Marionette, $, _){
     // New Staff View
     newStaffRegion: function(){
       var newStaffView = App.request('new:staff:view');
-      this.layoutView.newStaffRegion.show(newStaffView);
+      var newStaffRegion = this.layoutView.newStaffRegion;
+
+      newStaffView.on('hideNewForm', function(){
+        newStaffRegion.close();
+      }, this);
+
+      newStaffRegion.show(newStaffView);
     },
 
     // Index View
