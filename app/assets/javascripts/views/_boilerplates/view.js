@@ -1,7 +1,5 @@
 App.module('Views', function(Views, App, Backbone, Marionette, $, _){
 
-  _.remove = Marionette.View.prototype.remove;
-
   // extending Marionette's prototype in order to add a currentUser template helper
   // which allows us to constantly have the model's attributes exposed to all views
   _.extend(Marionette.View.prototype, {
