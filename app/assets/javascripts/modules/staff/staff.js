@@ -9,6 +9,9 @@ App.module('StaffModule', function(StaffModule, App, Backbone, Marionette, $, _)
   var API = {
     listStaff: function(){
       StaffModule.List.Controller.listStaff();
+    },
+    newStaff: function(){
+      return StaffModule.New.Controller.newStaff();
     }
   };
 
@@ -16,6 +19,10 @@ App.module('StaffModule', function(StaffModule, App, Backbone, Marionette, $, _)
     return new StaffModule.Router({
       controller: API
     });
+  });
+
+  App.reqres.setHandler('new:staff:view', function(){
+    return API.newStaff();
   });
 
 });

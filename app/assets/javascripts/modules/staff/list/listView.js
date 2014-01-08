@@ -19,11 +19,6 @@ App.module('StaffModule.List', function(List, App, Backbone, Marionette, $, _){
     template: 'staff/list/_actions'
   });
 
-  List.NewStaffView = App.Views.MainItemView.extend({
-    tagName: 'form',
-    template: 'staff/list/_new-staff'
-  });
-
   List.StafferView = App.Views.MainItemView.extend({
     className: 'row',
     template: 'staff/list/_each'

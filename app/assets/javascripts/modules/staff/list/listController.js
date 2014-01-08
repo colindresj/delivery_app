@@ -20,32 +20,29 @@ App.module('StaffModule.List', function(List, App, Backbone, Marionette, $, _){
     getLayoutView: function(){
       return new List.LayoutView();
     },
+
+    // Title View
     titleRegion: function(){
       var titleView = this.getTitleView();
       this.layoutView.titleRegion.show(titleView);
     },
-
-    // Title View
     getTitleView: function(){
       return new List.TitleView();
     },
+
+    // Actions View
     actionsRegion: function(){
       var actionsView = this.getActionsView();
       this.layoutView.actionsRegion.show(actionsView);
     },
-
-    // Actions View
     getActionsView: function(){
       return new List.ActionsView();
     },
 
     // New Staff View
     newStaffRegion: function(){
-      var newStaffView = this.getNewStaffView();
+      var newStaffView = App.request('new:staff:view');
       this.layoutView.newStaffRegion.show(newStaffView);
-    },
-    getNewStaffView: function(){
-      return new List.NewStaffView();
     },
 
     // Index View
