@@ -24,7 +24,13 @@ App.module('StaffModule.List', function(List, App, Backbone, Marionette, $, _){
 
   List.StafferView = App.Views.MainItemView.extend({
     className: 'row',
-    template: 'staff/list/_each'
+    template: 'staff/list/_each',
+    events: {
+      'click': 'showStaffer'
+    },
+    showStaffer: function(){
+      this.trigger('staff:clicked', this.model);
+    }
   });
 
   List.Empty = App.Views.MainItemView.extend({

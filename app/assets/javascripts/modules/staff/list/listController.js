@@ -57,8 +57,13 @@ App.module('StaffModule.List', function(List, App, Backbone, Marionette, $, _){
 
     // Index View
     staffIndexRegion: function(collection){
-      var newIndexView = this.getStaffIndexView(collection);
-      this.layoutView.staffIndexRegion.show(newIndexView);
+      var indexView = this.getStaffIndexView(collection);
+
+      indexView.on('childView:staff:clicked', function(childView, staffer){
+        App.vent.trigger('staff:clicked', staffer);
+      });
+
+      this.layoutView.staffIndexRegion.show(indexView);
     },
     getStaffIndexView: function(collection){
       return new List.StaffIndexView({
