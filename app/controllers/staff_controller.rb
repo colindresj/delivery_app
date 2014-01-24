@@ -4,4 +4,8 @@ class StaffController < ApplicationController
   def index
     @staff = Staff.all
   end
+
+  def show
+    @staffer = Staff.find params[:id]
+  end
 end
