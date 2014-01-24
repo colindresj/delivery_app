@@ -7,7 +7,7 @@ App.module('Views', function(Views, App, Backbone, Marionette, $, _){
       return {
         // currentUser: App.request('get:currentUser').toJSON(),
         linkTo: function(name, url, options){
-          var options = options || {};
+          options = options || {};
 
           _.defaults(options, {
             internal: true

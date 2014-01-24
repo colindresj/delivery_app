@@ -1,7 +1,7 @@
 // adding some custom navigation methods to the Marionette.Application prototype
 _.extend(Backbone.Marionette.Application.prototype, {
   navigate: function(route, options){
-    var options = options || {};
+    options = options || {};
 
     // appending # to root routes for consistency
     if (route.charAt(0) === '/') route = '#' + route;

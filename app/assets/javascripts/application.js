@@ -16,7 +16,6 @@
 //= require underscore
 //= require backbone
 //= require backbone.marionette
-//= require backbone.debugger
 //
 //= require js-routes
 //
