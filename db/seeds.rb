@@ -8,7 +8,7 @@
 
 Staff.delete_all
 
-Staff.create(:name => Faker::Name.name, :title => Faker::Name.title, :avatar_url => "rassets/avatar.png", :age => (20..100).to_a.sample )
+Staff.create(:name => Faker::Name.name, :title => Faker::Name.title, :avatar_url => "assets/avatar.png", :age => (20..100).to_a.sample )
 Staff.create(:name => Faker::Name.name, :title => Faker::Name.title, :avatar_url => "assets/avatar.png", :age => (20..100).to_a.sample )
 Staff.create(:name => Faker::Name.name, :title => Faker::Name.title, :avatar_url => "assets/avatar.png", :age => (20..100).to_a.sample )
 Staff.create(:name => Faker::Name.name, :title => Faker::Name.title, :avatar_url => "assets/avatar.png", :age => (20..100).to_a.sample )

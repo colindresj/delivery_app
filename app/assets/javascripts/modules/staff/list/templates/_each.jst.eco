@@ -1,7 +1,7 @@
 <div class="small-12 medium-2 columns">
-  <div class="staff-member text-center">
+  <div class="text-center">
     <a href="#" class="th">
-      <img src="<%= @avatar_url %>" alt="Greg">
+      <img src="<%= @avatar_url %>" alt="<%= @name %>">
     </a>
   </div>
 </div>

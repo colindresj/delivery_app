@@ -23,7 +23,7 @@ App.module('StaffModule.List', function(List, App, Backbone, Marionette, $, _){
   });
 
   List.StafferView = App.Views.MainItemView.extend({
-    className: 'row',
+    className: 'row staff-member',
     template: 'staff/list/_each',
     events: {
       'click': 'showStaffer'

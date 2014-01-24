@@ -1,6 +1,11 @@
 .staff-member {
+  padding: 15px 0;
   .th img {
     max-height: 150px;
+  }
+  &:hover {
+    cursor: pointer;
+    background: #dadada;
   }
 }
 
