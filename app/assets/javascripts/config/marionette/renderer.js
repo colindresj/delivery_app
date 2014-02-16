@@ -4,7 +4,7 @@ window.JST = window.JST || {};
 
 _.extend(Backbone.Marionette.Renderer, {
 
-  root: 'modules',
+  roots: ['modules', 'components'],
   render: function(template, data){
     var path = this.getTemplate(template);
     if (!path) throw 'Template ' + template + ' not found!';
@@ -17,9 +17,13 @@ _.extend(Backbone.Marionette.Renderer, {
     _ref = [template, template.split('/').insertAt(-1, 'templates').join('/')];
     for (_i = 0, _len = _ref.length; _i < _len; _i++) {
       path = _ref[_i];
-      if (JST[this.root + '/' + path]) {
-        return JST[this.root + '/' + path];
-      }
+
+      // loop through each of the roots to look for the template file
+      _.each(this.roots, function(root){
+        if (JST[this.root + '/' + path]) {
+          return JST[this.root + '/' + path];
+        }
+      });
     }
   }
 
