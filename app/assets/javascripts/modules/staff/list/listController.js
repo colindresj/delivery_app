@@ -2,17 +2,21 @@ App.module('StaffModule.List', function(List, App, Backbone, Marionette, $, _){
 
   List.Controller = {
     listStaff: function(){
-      var staffCollection = App.request('staff:allStaff');
-      this.layoutView = this.getLayoutView();
+      var staffCollection = App.request('staff:allStaff'),
+          _this = this;
 
-      // instantiating all the subregions only when the layoutView is shown
-      this.layoutView.on('show', function(){
-        this.titleRegion();
-        this.actionsRegion();
-        this.staffIndexRegion(staffCollection);
-      }, this);
+      App.execute('when:fetched', staffCollection, function(){
+        _this.layoutView = _this.getLayoutView();
 
-      App.mainRegion.show(this.layoutView);
+        // instantiating all the subregions only when the layoutView is shown
+        _this.layoutView.on('show', function(){
+          _this.titleRegion();
+          _this.actionsRegion();
+          _this.staffIndexRegion(staffCollection);
+        }, _this);
+
+        App.mainRegion.show(_this.layoutView);
+      });
     },
 
     // Layout View
@@ -45,8 +49,8 @@ App.module('StaffModule.List', function(List, App, Backbone, Marionette, $, _){
 
     // New Staff View
     newStaffRegion: function(){
-      var newStaffView = App.request('new:staff:view');
-      var newStaffRegion = this.layoutView.newStaffRegion;
+      var newStaffView = App.request('new:staff:view'),
+          newStaffRegion = this.layoutView.newStaffRegion;
 
       newStaffView.on('hideNewForm', function(){
         newStaffRegion.close();
