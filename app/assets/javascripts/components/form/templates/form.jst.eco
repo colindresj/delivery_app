@@ -1,0 +1,15 @@
+<div class="panel">
+  <div id="form-content-region"></div>
+  <% if @footer: %>
+    <footer>
+      <ul class="inline-list <%= @buttons.location %>">
+        <li>
+          <button class="button tiny secondary" data-form-button="cancel"><%= @buttons.secondary %></button>
+        </li>
+        <li>
+          <button class="button tiny primary" data-form-button="primary"><%= @buttons.primary %></button>
+        </li>
+      </ul>
+    </footer>
+  <% end %>
+</div>

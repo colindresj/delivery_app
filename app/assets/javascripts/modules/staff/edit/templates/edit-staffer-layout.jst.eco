@@ -1,0 +1,28 @@
+<section>
+  <div id="page-title">
+    <div class="row">
+      <div class="small-12 columns">
+        <h1><%= @name %></h1>
+        <h4><%= @title %></h4>
+      </div>
+    </div>
+  </div>
+  <div id="breadcrumbs">
+    <div class="row">
+      <div class="small-12 columns">
+        <ul class="breadcrumbs">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Staff</a></li>
+          <li class="unavailable"><a href="#"><%= @name %></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="row">
+    <div class="small-12 medium-12 columns">
+      <div id="form-region"></div>
+    </div>
+  </div>
+</section>
