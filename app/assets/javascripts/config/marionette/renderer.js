@@ -11,7 +11,7 @@ _.extend(Backbone.Marionette.Renderer, {
     return path(data);
   },
   getTemplate: function(template){
-    var path, _i, _len, _ref;
+    var path, _i, _len, _ref, result;
 
     // loop through both /templates and without /templates to shorten relative path
     _ref = [template, template.split('/').insertAt(-1, 'templates').join('/')];
@@ -19,12 +19,14 @@ _.extend(Backbone.Marionette.Renderer, {
       path = _ref[_i];
 
       // loop through each of the roots to look for the template file
-      _.each(this.roots, function(root){
-        if (JST[this.root + '/' + path]) {
-          return JST[this.root + '/' + path];
+      for (var i = this.roots.length - 1; i >= 0; i--) {
+        var root = this.roots[i];
+        if (JST[root + '/' + path]) {
+          result = JST[root + '/' + path];
         }
-      });
+      }
     }
+    return result;
   }
 
 });
