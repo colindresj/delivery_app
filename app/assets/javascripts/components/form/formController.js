@@ -18,8 +18,13 @@ App.module('Components.Form', function(Form, App, Backbone, Marionette, $, _){
     },
     getFormLayout: function(settings){
       var config, configuredButtons;
+      settings = settings || {};
 
       config = this.getDefaultSettings(_.result(this.contentView, 'formSettings'));
+
+      // overwrite any of the config set in the view by the settings passed in by the controller
+      _.extend(config, settings);
+
       configuredButtons = this.getButtons(config.buttons);
 
       return new Form.formWrapper({

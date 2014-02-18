@@ -11,7 +11,8 @@ App.module('StaffModule.Edit', function(Edit, App, Backbone, Marionette, $, _){
     template: 'staff/edit/edit-staffer',
     formSettings: {
       footer: true,
-      focusFirst: false
+      focusFirst: false,
+      buttons: false
     }
   });
 
