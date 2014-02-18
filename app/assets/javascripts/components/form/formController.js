@@ -17,10 +17,15 @@ App.module('Components.Form', function(Form, App, Backbone, Marionette, $, _){
       this.formLayout.formContentRegion.show(this.contentView);
     },
     getFormLayout: function(settings){
-      var config = this.getDefaultSettings(_.result(this.contentView, 'formSettings'));
+      var config, configuredButtons;
+
+      config = this.getDefaultSettings(_.result(this.contentView, 'formSettings'));
+      configuredButtons = this.getButtons(config.buttons);
+
       return new Form.formWrapper({
         model: this.contentView.model,
-        config: config
+        config: config,
+        buttons: configuredButtons
       });
     },
     getDefaultSettings: function(config){
@@ -32,18 +37,15 @@ App.module('Components.Form', function(Form, App, Backbone, Marionette, $, _){
 
       return _.defaults(config, {
         footer: true,
-        focusFirst: true,
-        buttons: this.getDefaultButtonSettings(config.buttons)
+        focusFirst: true
       });
     },
-    getDefaultButtonSettings: function(config){
-      config = config || {};
-
-      return _.defaults(config, {
-        primary: 'Save',
-        secondary: 'Cancel',
-        location: 'right'
-      });
+    getButtons: function(buttons){
+      if (buttons !== false) {
+        return App.request('form:buttons', buttons, this.contentView.model);
+      } else {
+        return false;
+      }
     }
   });
 
