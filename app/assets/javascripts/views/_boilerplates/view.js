@@ -19,6 +19,20 @@ App.module('Views', function(Views, App, Backbone, Marionette, $, _){
           return '<a href="' + url + '">' + name + '</a>';
         }
       };
+    },
+    setInstancePropertiesFor: function(){
+      var args, _picked, key, val;
+
+      // converting the arguments object into a real array
+      args = arguments.length >= 1 ? Array.prototype.slice.call(arguments, 0) : [];
+
+      // pick out the options that should be set as instance properties
+      _picked = _.pick(this.options, args);
+
+      for (key in _picked) {
+        val = _picked[key];
+        this[key] = val;
+      }
     }
   });
 

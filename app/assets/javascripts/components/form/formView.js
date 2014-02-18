@@ -12,29 +12,31 @@ App.module('Components.Form', function(Form, App, Backbone, Marionette, $, _){
       formContentRegion: '#form-content-region'
     },
     ui: {
-      buttonContainer: 'ul.inline-list',
-
+      buttonContainer: 'ul.inline-list'
+    },
+    initialize: function(){
+      this.setInstancePropertiesFor('config', 'buttons');
     },
     serializeData: function(){
       return {
-        footer: this.options.config.footer,
-        buttons: this.options.buttons ? this.options.buttons.toJSON() : false
+        footer: this.config.footer,
+        buttons: this.buttons ? this.buttons.toJSON() : false
       };
     },
     onShow: function(){
       var _this = this;
       _.defer(function(){
         _this.focusFirstInput();
-        if (_this.options.buttons) _this.buttonPlacement();
+        if (_this.buttons) _this.placeButtons();
       });
     },
     focusFirstInput: function(){
-      if (this.options.config.focusFirst) {
+      if (this.config.focusFirst) {
         this.$el.find(':input:visible:enabled:first').focus();
       }
     },
     placeButtons: function(){
-      this.ui.buttonContainer.addClass(this.options.buttons.location);
+      this.ui.buttonContainer.addClass(this.buttons.location);
     },
     getDataType: function(){
       return this.model.isNew() ? 'new' : 'edit';
